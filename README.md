@@ -1,4 +1,4 @@
-# AuthElixir
+# User Auth using Elixir/Phoenix
 
 To start your Phoenix server:
 
