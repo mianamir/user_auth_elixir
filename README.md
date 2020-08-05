@@ -1,5 +1,13 @@
 # User Auth using Elixir/Phoenix
 
+## Modules
+User Management
+Convert user plain passwords into hash using comeonin and argon2
+Store the hash passwords into Database
+Sign Up
+Sign In
+Sign Logout
+
 To start your Phoenix server:
 
   * Install dependencies with `mix deps.get`
