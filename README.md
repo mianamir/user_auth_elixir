@@ -1,12 +1,12 @@
 # User Auth using Elixir/Phoenix
 
 ## Modules
-User Management
-Convert user plain passwords into hash using comeonin and argon2
-Store the hash passwords into Database
-Sign Up
-Sign In
-Sign Logout
+<br/>User Management
+<br/>Convert user plain passwords into hash using comeonin and argon2
+<br/>Store the hash passwords into Database
+<br/>Sign Up
+<br/>Sign In
+<br/>Sign Logout
 
 To start your Phoenix server:
 
