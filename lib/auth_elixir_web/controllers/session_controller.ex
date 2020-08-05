@@ -1,0 +1,36 @@
+defmodule AuthElixirWeb.SessionController do
+  use AuthElixirWeb, :controller
+
+  alias AuthElixir.Repo
+  alias AuthElixir.Accounts.Auth
+
+  def new(conn, _params) do
+    render conn, "new.html"
+  end
+
+  def create(conn, session_params) do
+      case Auth.login(session_params, Repo) do
+        {:ok, user} ->
+          conn
+          |> put_session(:current_user, user.id)
+          |> put_flash(:info, "Logged In..")
+          |> redirect(to: "/")
+        :error
+          conn
+          |> put_flash(:error, "Incorrect email or password")
+          |> render("new.html")
+      end
+  end
+
+  def delete(conn, _) do
+    conn
+    |> delete_session(:current_user)
+    |> put_flash(:info, "Logged Out..")
+    |> redirect(to: "/")
+  end
+
+
+
+
+  
+end

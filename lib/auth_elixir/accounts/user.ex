@@ -16,18 +16,26 @@ defmodule AuthElixir.Accounts.User do
     timestamps()
   end
 
-  @required_fields ~w(email username password)
-  @optional_fields ~w()
+  # @required_fields ~w(email username password)
+  # @optional_fields ~w()
+
+
   @doc false
   def changeset(user, attrs) do
     user
-    |> cast(attrs, @required_fields, @optional_fields)
+    |> cast(attrs, [:username, :email, :password])
+    # |> cast(attrs, @required_fields, @optional_fields)
     |> validate_required([:username, :email])
     |> validate_format(:email, ~r/@/)
     |> validate_length(:password, min: 6)
     |> validate_confirmation(:password)
     |> unique_constraint(:email)
+    |> downcase_email
     |> encrypt_password
+  end
+
+  defp downcase_email(changeset) do
+    update_change(changeset, :email, &String.downcase/1)
   end
 
   defp encrypt_password(changeset) do

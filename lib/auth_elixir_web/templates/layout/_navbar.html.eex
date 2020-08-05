@@ -5,9 +5,9 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
-      <a class="nav-item nav-link" href="#">Sign Up</a>
-      <a class="nav-item nav-link" href="#">Profile</a>
+     <%= link "All Users", to: Routes.user_path(@conn, :index), class: "nav-item nav-link" %>
+      <%= link "Sign Up", to: Routes.user_path(@conn, :new), class: "nav-item nav-link" %>
+      <%= link "Sign In", to: Routes.session_path(@conn, :new), class: "nav-item nav-link" %>
     </div>
   </div>
 </nav>

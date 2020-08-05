@@ -37,6 +37,15 @@ defmodule AuthElixirWeb do
       import Phoenix.Controller,
         only: [get_flash: 1, get_flash: 2, view_module: 1, view_template: 1]
 
+      # Use all HTML functionality (forms, tags, etc)
+      # use Phoenix.HTML
+      
+      # import AuthElixirWeb.Router.Helpers
+      # import AuthElixirWeb.ErrorHelpers
+      # import AuthElixirWeb.Gettext
+
+      # import AuthElixir.Accounts.Auth, only: [currrent_user: 1, logged_in?: 1]
+
       # Include shared imports and aliases for views
       unquote(view_helpers())
     end

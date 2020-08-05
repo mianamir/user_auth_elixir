@@ -17,6 +17,10 @@ defmodule AuthElixirWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :index
+    get "/login", SessionController, :new
+    post "/login", SessionController, :create
+    get "/logout", SessionController, :delete
+    
     resources "/users", UserController
   end
 
