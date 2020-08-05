@@ -6,7 +6,7 @@
 <br/>Store the hash passwords into Database
 <br/>Sign Up
 <br/>Sign In
-<br/>Sign Logout
+<br/>Sign Out
 
 To start your Phoenix server:
 
